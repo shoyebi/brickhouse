@@ -42,7 +42,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <apache.hadoop.version>0.20.2</apache.hadoop.version>
         <apache.hbase.version>0.92.1</apache.hbase.version>
-        <apache.hive.version>0.10.0</apache.hive.version>
+        <apache.hive.version>3.1.0.3.1.0.0-78</apache.hive.version>
         <codehaus.jackson.version>1.8.8</codehaus.jackson.version>
     </properties>
 
@@ -279,7 +279,42 @@
             <name>maven-repo-snapshots</name>
             <url>http://maven.klout:8081/artifactory/libs-snapshot-local</url>
         </snapshotRepository>
+
     </distributionManagement>
+    <repositories>
+        <repository>
+            <id>HDPPublic</id>
+            <layout>default</layout>
+            <name>HDP Public</name>
+            <releases>
+                <checksumPolicy>warn</checksumPolicy>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <url>http://repo.hortonworks.com/content/repositories/public/</url>
+        </repository>
+        <repository>
+            <id>HDPReleases</id>
+            <layout>default</layout>
+            <name>HDP Releases</name>
+            <releases>
+                <checksumPolicy>warn</checksumPolicy>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <checksumPolicy>fail</checksumPolicy>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <url>http://repo.hortonworks.com/content/repositories/releases/</url>
+        </repository>
+    </repositories>
 
 
 </project>
